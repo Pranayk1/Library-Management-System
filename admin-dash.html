@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Library Management</title>
+    <style>
+        /* General Reset */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #4a90e2;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            height: 40px; /* Increased height */
+        }
+
+        .navbar h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background-color: #ffffff;
+            width: 240px; /* Reduced width */
+            height: 100%;
+            box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 70px; /* Below navbar */
+            left: 0;
+            overflow-y: auto;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 15px 20px;
+            color: #333;
+            text-decoration: none;
+            font-size: 16px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: #4a90e2;
+            color: white;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 70px; /* Navbar height */
+            margin-left: 200px; /* Sidebar width */
+            padding: 20px;
+            flex: 1;
+            overflow-y: auto;
+            text-align: center; /* Center-align content */
+        }
+
+        .dashboard-title {
+            font-size: 32px;
+            color: #4a90e2;
+            margin-bottom: 20px;
+        }
+
+        /* Output Section */
+        .output-section {
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            max-width: 800px;
+            margin: 20px auto;
+            display: none;
+        }
+
+        /* Toggle Section Visibility */
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        input[type="checkbox"]:checked + .output-section {
+            display: block;
+        }
+
+        .output-section h2 {
+            font-size: 24px;
+            color: #4a90e2;
+            margin-bottom: 20px;
+        }
+
+        .output-section p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1>Admin Dashboard</h1>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="View ">View Student</a>
+        <a href="#">View Issued Books</a>
+        <a href="#">Books Available</a>
+        <a href="#">Add New Book</a>
+        <a href="#">Remove Book</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1 class="dashboard-title">Welcome to Admin Dashboard</h1>
+
+        <!-- View Students -->
+        <input type="checkbox" id="viewStudents">
+        <div class="output-section">
+            <h2>Student List</h2>
+            <p>
+                1. John Doe<br>
+                2. Jane Smith<br>
+                3. Emily Johnson<br>
+            </p>
+        </div>
+
+        <!-- View Issued Books -->
+        <input type="checkbox" id="viewIssuedBooks">
+        <div class="output-section">
+            <h2>Issued Books</h2>
+            <p>
+                John Doe: "Introduction to Algorithms"<br>
+                Jane Smith: "The Pragmatic Programmer"<br>
+            </p>
+        </div>
+
+        <!-- Books Available -->
+        <input type="checkbox" id="viewAvailableBooks">
+        <div class="output-section">
+            <h2>Books Available</h2>
+            <p>
+                Total Books: 120<br>
+                Available: 98<br>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
